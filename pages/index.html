@@ -36,12 +36,20 @@
 				<li class="blue"></li>
 				<li class="purple"></li>
 			</ul>
-			<div class="slider-link left clickable">
-				<button class="slider-button left"></button>
-			</div>
-			<div class="slider-link right clickable" onclick="slide()">
-				<button class="slider-button right"></button>
-			</div>
+			<ul id="slider-circles">
+				<li class="slider-circle clickable" onclick="slide(0, 'absolute');"></li>
+				<li class="slider-circle clickable" onclick="slide(1, 'absolute');"></li>
+				<li class="slider-circle clickable" onclick="slide(2, 'absolute');"></li>
+				<li class="slider-circle clickable" onclick="slide(3, 'absolute');"></li>
+				<li class="slider-circle clickable" onclick="slide(4, 'absolute');"></li>
+				<li class="slider-circle clickable" onclick="slide(5, 'absolute');"></li>
+			</ul>
+			<button class="slider-button left clickable" onclick="slide(-1);">
+				<div class="slider-arrow left"></div>
+			</button>
+			<button class="slider-button right clickable" onclick="slide();">
+				<div class="slider-arrow right"></div>
+			</button>
 		</div>
 <!-- 		<div id="content">
 			<div id="image"></div>
