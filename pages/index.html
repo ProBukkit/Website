@@ -6,6 +6,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<link href='../static/styles/index.css' rel='stylesheet' type='text/css'>
+		<link rel="shortcut icon" href="../static/images/logo.ico" type="image/x-icon"/>
 	</head>
 	<body>
 		<header>
@@ -27,8 +28,20 @@
 			</div>
 		</header>
 		<div id="slider">
-			<div id="slider-button-left"></div>
-			<div id="slider-button-right"></div>
+			<ul id="slider-list">
+				<li class="red"></li>
+				<li class="orange"></li>
+				<li class="yellow"></li>
+				<li class="green"></li>
+				<li class="blue"></li>
+				<li class="purple"></li>
+			</ul>
+			<div class="slider-link left clickable">
+				<button class="slider-button left"></button>
+			</div>
+			<div class="slider-link right clickable" onclick="slide()">
+				<button class="slider-button right"></button>
+			</div>
 		</div>
 <!-- 		<div id="content">
 			<div id="image"></div>
@@ -43,5 +56,6 @@
 		<footer>
 			<span>&copy; 2015 Powered Rails.</span>
 		</footer>
+		<script src="../static/scripts/index.js"></script>
 	</body>
 </html>
