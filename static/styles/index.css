@@ -37,6 +37,14 @@ header {
 
 
 /*** 2-B. LOGO+HEADING ********/
+#header-underlay {
+	width: 100%;
+	height: 64px;
+	background-color: #bc0000;
+	position: absolute;
+	z-index: 0;
+}
+
 #logo {
 	width: 48px;
 	height: 48px;
@@ -78,6 +86,10 @@ h1 {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+h2 {
+	margin: 0;
 }
 
 #branding {
@@ -142,7 +154,7 @@ h1 {
 	position: absolute;
 	top: 0;
 	right: 0;
-	margin: 14px 16px;
+	margin: 14px 24px;
 	height: 36px;
 }
 
@@ -157,7 +169,7 @@ h1 {
 	line-height: 32px;
 	outline: 0;
 	border: 0;
-	border-bottom: 4px solid #ab0000;
+	box-shadow: 0 4px #800;
 	border-radius: 4px;
 	bottom: 0;
 	cursor: pointer;
@@ -167,12 +179,12 @@ h1 {
 
 #buttons button:hover {
 	transform: translateY(1px);
-	border-bottom-width: 3px;
+	box-shadow: 0 3px #800;
 }
 
 #buttons button:active {
 	transform: translateY(4px);
-	border-bottom-width: 0;
+	box-shadow: 0 0 #800;
 }
 
 
@@ -183,8 +195,8 @@ h1 {
 #slider {
 	width: 100vw;
 	height: 360px;
-	position: absolute;
-	top: 64px;
+	position: relative;
+	margin-top: 64px;
 }
 
 /*** 3-A. SLIDING PART ********/
@@ -332,6 +344,39 @@ h1 {
 .slider-arrow.right:after {
 	transform: translateY(50%) skewX(-45deg);
 }
+
+
+#content {
+	display: table;
+	color: #333;
+	padding-bottom: 128px;
+}
+
+.content-cell {
+	vertical-align: top;
+	display: table-cell;
+	position: relative;
+	padding: 0;
+}
+
+#content .image {
+	display: inline-block;
+	margin: 32px;
+	width: calc(40vw - 128px);
+	height: calc(100% - 64px);
+	background: #bc0000;
+}
+
+#text {
+	
+	margin: 32px;
+	width: 60vw;
+}
+
+#text p {
+	text-align: justify;
+}
+
 
 
 footer {
