@@ -93,7 +93,7 @@ header {
 h1 {
 	display: inline-block;
 	margin: 0;
-	color: #ececec;
+	color: #fff;
 	font: 2em Righteous, sans-serif;
 	position: absolute;
 	top: 50%;
@@ -233,6 +233,7 @@ h2 {
 	width: 100vw;
 	height: 100%;
 	display: inline-block;
+	position: relative;
 }
 
 #slider-list li.red {
@@ -256,7 +257,38 @@ h2 {
 }
 
 #slider-list li.purple {
-	background: #936;
+	background: #603;
+}
+
+#slider-list li span {
+	display: block;
+	text-align: center;
+	position: absolute;
+	top: 40%;
+	width: 100vw;
+	font-size: 1.25rem;
+	color: #fff;
+}
+
+#slider-list li button {
+	cursor: pointer;
+	outline: 0;
+	position: absolute;
+	margin: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 48px;
+	padding: 8px 32px;
+	color: #fff;
+	background: transparent;
+	border: 2px solid #fff;
+	border-radius: 8px;
+	font-size: 1.5rem;
+	transition: all 0.2s ease-in-out;
+}
+
+#slider-list li button:hover {
+	background-color: rgba(255, 255, 255, 0.25);
 }
 
 
@@ -280,6 +312,11 @@ h2 {
 	display: inline-block;
 	border-radius: 50%;
 	margin: 4px;
+	transition: background 0.2s ease-in-out;
+}
+
+.selected {
+	background: rgba(255, 255, 255, 0.9);
 }
 
 

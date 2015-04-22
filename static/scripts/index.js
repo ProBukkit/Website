@@ -1,5 +1,5 @@
 var slider = document.getElementById("slider-list"),
-	children = slider.getElementsByTagName("li").length,
+	children = slider.getElementsByTagName("li"),
 	image = document.getElementById("image"),
 	intro = document.getElementById("intro"),
 	x = 0,
@@ -8,10 +8,13 @@ var slider = document.getElementById("slider-list"),
 function slide(change, type){
 	change = change || 1;
 	type = type || "relative";
+	$("#slider-circles li")[x].classList.remove("selected");
 	if(type === "relative")x += change;
 	else if(type === "absolute")x = change;
-	if(x < 0)x = children-1;
-	if(x >= children)x = 0;
+	console.log($("#slider-circles li")[x].classList)
+	if(x < 0)x = children.length-1;
+	if(x >= children.length)x = 0;
+	$("#slider-circles li")[x].classList.add("selected");
 	slider.style.transform = "translateX(-"+x*100+"vw)";
 	clearTimeout(timeout);
 	timeout = setTimeout(slide, delay);
