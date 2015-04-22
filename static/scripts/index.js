@@ -11,7 +11,6 @@ function slide(change, type){
 	$("#slider-circles li")[x].classList.remove("selected");
 	if(type === "relative")x += change;
 	else if(type === "absolute")x = change;
-	console.log($("#slider-circles li")[x].classList)
 	if(x < 0)x = children.length-1;
 	if(x >= children.length)x = 0;
 	$("#slider-circles li")[x].classList.add("selected");
