@@ -5,11 +5,28 @@ function main(){
 		image = document.getElementById("image"),
 		intro = document.getElementById("intro"),
 		cell = document.getElementById("intro-table-image-cell"),
-		description = document.getElementById("slider-description"),
-		button = document.getElementById("slider-description-button"),
+		description = $("#slider-description"),
+		button = $("#slider-description-button"),
+		buttonText = $("#slider-description-button-text"),
+		descriptionTexts = [
+			description.html(),
+			"Powered Rails is open source and constantly expanding. You can help development by forking the project on GitHub and suggesting changes!",
+			"PR also has a vibrant community of developers. Join us, noob.",
+			"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+			"This is obviously filler text, I have no idea what to put here.",
+			"Try displaying this page without JavaScript!"
+		],
+		buttonTexts = [
+			buttonText.html(),
+			"Visit our GitHub",
+			"Join the community",
+			"Lorem ipsum",
+			"More filler text",
+			"Slick resizing buttons"
+		],
 		x = 0,
 		delay = 5000,
-		speed, timeout, classList, $circle, circles = [];
+		before, after, speed, timeout, classList, $circle, circles = [];
 
 	$("#slider-list").children().each(
 		function(index){
@@ -40,9 +57,19 @@ function main(){
 			$(".slider-button.right").css("right", "-192px");
 		}
 	);
+	button.css("width", buttonText.css("width"));
 
 	slide = function(change, type){
-		// button.style.opacity = 0;
+		buttonText.animate({opacity: 0}, 500, function(){
+			button.css("width", "");
+			buttonText.html(buttonTexts[x]);
+			button.css("width", buttonText.css("width"));
+			buttonText.animate({opacity: 1}, 1000);
+		});
+		description.animate({opacity: 0}, 500, function(){
+			description.html(descriptionTexts[x]);
+			description.animate({opacity: 1}, 1000);
+		});
 		if(change === undefined)change = 1;
 		type = type || "relative";
 		circles[x].attr("class", "slider-circle clickable");
@@ -58,7 +85,7 @@ function main(){
 	timeout = setTimeout(slide, delay);
 
 	onresize = resize = function(){
-		cell.style.marginLeft = 0;
+		cell.style.borderRight = "32px solid transparent";
 		image.style.width = 0;
 		image.style.width = getComputedStyle(intro).getPropertyValue("height");
 	}

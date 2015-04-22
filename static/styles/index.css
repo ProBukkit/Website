@@ -230,31 +230,50 @@ h2 {
 	white-space: normal;
 	text-align: center;
 	font-size: 1.3rem;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
 	color: #fff;
 }
 
 #slider-description-button {
+	width: 114px;
+	height: 32px;
 	cursor: pointer;
 	outline: 0;
 	position: absolute;
 	margin: 0;
+	padding: 8px 32px;
 	left: 50%;
 	transform: translateX(-50%);
 	bottom: 48px;
-	padding: 8px 32px;
-	color: #fff;
 	background: transparent;
-	border: 2px solid #fff;
+	color: #fff;
+	box-shadow: 0 0 0 2px #fff;
+	border: 0;
 	border-radius: 8px;
 	font-size: 1.5rem;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
+	white-space: nowrap;
+	text-align: center;
+	-webkit-transition: background 0.2s ease-in-out, width 0.5s ease-in-out;
+	-moz-transition: background 0.2s ease-in-out, width 0.5s ease-in-out;
+	-o-transition: background 0.2s ease-in-out, width 0.5s ease-in-out;
+	transition: background 0.2s ease-in-out, width 0.5s ease-in-out;
+    display: block;
 }
 
 #slider-description-button:hover {
-	background-color: rgba(255, 255, 255, 0.25);
+	background: rgba(255, 255, 255, 0.25);
+}
+
+#slider-description-button-text {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	line-height: 32px;
+	white-space: nowrap;
 }
 
 /*** 3-A. SLIDING PART ********/
@@ -464,7 +483,6 @@ h2 {
 
 #intro-table-image-cell {
 	vertical-align: middle;
-	border-right: 32px solid transparent;
 }
 
 #news, #sponsors {
@@ -503,7 +521,7 @@ footer span {
 		left: auto;
 		right: 24px;
 	}
-	#slider span {
+	#slider-description-container {
 		top: 40%;
 	}
 }
@@ -519,10 +537,10 @@ footer span {
 	#slider {
 		height: 240px;
 	}
-	#slider span {
+	#slider-description-container {
 		top: 30%;
 	}
-	#slider span p {
+	#slider-description {
 		font-size: 1.1rem;
 	}
 	.slider-button.left {
