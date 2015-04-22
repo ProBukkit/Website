@@ -36,7 +36,7 @@ p {
 header, footer {
 	width: 100vw;
 	position: fixed;
-	z-index: 2;
+	z-index: 3;
 }
 
 header {
@@ -214,9 +214,18 @@ h2 {
 	margin-top: 64px;
 }
 
+#slider-overlay {
+	position: absolute;
+	z-index: 1;
+	width: 100vw;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+}
+
 #slider-description-container {
 	display: inline-block;
 	position: absolute;
+	z-index: 2;
 	left: 50%;
 	top: 40%;
 	transform: translate(-50%, -50%);
@@ -242,6 +251,7 @@ h2 {
 	cursor: pointer;
 	outline: 0;
 	position: absolute;
+	z-index: 2;
 	margin: 0;
 	padding: 8px 32px;
 	left: 50%;
@@ -300,36 +310,39 @@ h2 {
 	display: inline-block;
 	position: relative;
 	text-align: center;
+	background-size: cover;
+	background-position: center 40%;
 }
 
-#slider-list li.red {
-	background: #600;
+#slider-list li.sunrise {
+	background-image: url(../images/slider-sunrise.png);
 }
 
-#slider-list li.orange {
-	background: #c60;
+#slider-list li.cliff {
+	background-image: url(../images/slider-cliff.png);
 }
 
-#slider-list li.yellow {
-	background: #fc3;
+#slider-list li.forest {
+	background-image: url(../images/slider-forest.png);
 }
 
-#slider-list li.green {
-	background: #0c6;
+#slider-list li.moon {
+	background-image: url(../images/slider-moon.png);
 }
 
-#slider-list li.blue {
-	background: #69c;
+#slider-list li.ship {
+	background-image: url(../images/slider-ship.png);
 }
 
-#slider-list li.purple {
-	background: #603;
+#slider-list li.island {
+	background-image: url(../images/slider-island.png);
 }
 
 
 /*** 3-B. SLIDER CIRCLES ******/
 #slider-circles {
 	position: absolute;
+	z-index: 2;
 	left: 50%;
 	bottom: 16px;
 	transform: translateX(-50%);
@@ -370,6 +383,7 @@ h2 {
 	outline: 0;
 	background: rgba(0, 0, 0, 0.35);
 	transition: all 0.5s ease-in-out;
+	z-index: 2;
 }
 
 .slider-button.left {
