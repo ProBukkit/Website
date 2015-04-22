@@ -7,6 +7,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
 		<link href='../styles/index.css' rel='stylesheet' type='text/css'>
 		<link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
 		<div id="header-underlay"></div>
@@ -19,9 +20,11 @@
 			</div>
 			<nav id="main-nav">
 				<ul>
-					<li><a href="#forum">Forum</a></li>
-					<li><a href="#resources">Resources</a></li>
-					<li><a href="#github">GitHub</a></li>
+					<li><a href="#download" target="_blank">Download</a></li>
+					<li><a href="#forum" target="_blank">Forum</a></li>
+					<li><a href="#resources" target="_blank">Resources</a></li>
+					<li><a href="https://github.com/PoweredRails" target="_blank">GitHub</a></li>
+					<li><a href="#about" target="_blank">About</a></li>
 				</ul>
 			</nav>
 			<div id="buttons">
@@ -30,39 +33,20 @@
 		</header>
 		<div id="slider">
 			<ul id="slider-list">
-				<li class="red">
-					<span>You should totally use Powered Rails.</span>
-					<button>This slide is red.</button>
-				</li>
-				<li class="orange">
-					<span>It's really good.</span>
-					<button>This slide is orange.</button>
-				</li>
-				<li class="yellow">
-					<span>Our server has the best unreadable filler text.</span>
-					<button>This slide is yellow.</button>
-				</li>
-				<li class="green">
-					<span>You haven't lived until you use our server.</span>
-					<button>This slide is green.</button>
-				</li>
-				<li class="blue">
-					<span>Our server lets you play Minecraft.</span>
-					<button>This slide is blue.</button>
-				</li>
-				<li class="purple">
-					<span>No other Minecraft server lets you play Minecraft, you know.</span>
-					<button>This slide is purple.</button>
-				</li>
+				<li class="red"></li>
+				<li class="orange"></li>
+				<li class="yellow"></li>
+				<li class="green"></li>
+				<li class="blue"></li>
+				<li class="purple"></li>
 			</ul>
-			<ul id="slider-circles">
-				<li class="slider-circle clickable selected" onclick="slide(0, 'absolute');"></li>
-				<li class="slider-circle clickable" onclick="slide(1, 'absolute');"></li>
-				<li class="slider-circle clickable" onclick="slide(2, 'absolute');"></li>
-				<li class="slider-circle clickable" onclick="slide(3, 'absolute');"></li>
-				<li class="slider-circle clickable" onclick="slide(4, 'absolute');"></li>
-				<li class="slider-circle clickable" onclick="slide(5, 'absolute');"></li>
-			</ul>
+			<div id="slider-description-container">
+				<p id="slider-description">Powered Rails is an open source server mod for Minecraft. Making high-quality plugins has never been easier!</p>
+			</div>
+			<button id="slider-description-button">
+				<a id="slider-description-button-text">Download</a>
+			</button>
+			<ul id="slider-circles"></ul>
 			<button class="slider-button left clickable" onclick="slide(-1);">
 				<div class="slider-arrow left"></div>
 			</button>
@@ -77,7 +61,7 @@
 						<div id="image"></div>
 					</div>
 					<div class="content-table-cell" id="intro-table-text-cell">
-						<h2>Welcome to Powered Rails!</h2>
+						<h2>Powered Rails is cool.</h2>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
