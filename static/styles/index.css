@@ -20,6 +20,7 @@ html, body {
 
 h2 {
 	font-size: 2rem;
+	white-space: normal;
 }
 
 p {
@@ -554,6 +555,9 @@ footer span {
 }
 
 @media screen and (max-width: 840px) {
+	h2 {
+		text-align: center;
+	}
 	#branding {
 		left: 50%;
 		transform: translateX(-50%);
@@ -570,11 +574,14 @@ footer span {
 	#slider-description {
 		font-size: 1rem;
 	}
-	.slider-button.left {
-		left: 0;
+	#intro-table-image-cell {
+		border: 0;
 	}
-	.slider-button.right {
-		right: 0;
+	#content {
+		white-space: normal;
+	}
+	.content-box {
+		width: calc(100vw - 112px);
 	}
 	#image {
 		display: none;
