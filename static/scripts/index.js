@@ -10,7 +10,7 @@ function main(){
 		buttonText = $("#slider-description-button-text"),
 		descriptionTexts = [
 			description.html(),
-			"Powered Rails is open source and constantly expanding. You can help development by forking the project on GitHub and suggesting changes!",
+			"Powered Rails is constantly expanding. You can view the source and help out through GitHub!",
 			"PR also has a vibrant community of developers. Join us, noob.",
 			"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 			"This is obviously filler text, I have no idea what to put here.",
@@ -24,7 +24,7 @@ function main(){
 			"More filler text",
 			"Slick resizing buttons"
 		],
-		x = 0,
+		x = 0, startX = 0,
 		delay = 5000,
 		before, after, speed, timeout, classList, $circle, circles = [];
 
@@ -60,16 +60,7 @@ function main(){
 	button.css("width", buttonText.css("width"));
 
 	slide = function(change, type){
-		buttonText.animate({opacity: 0}, 500, function(){
-			button.css("width", "");
-			buttonText.html(buttonTexts[x]);
-			button.css("width", buttonText.css("width"));
-			buttonText.animate({opacity: 1}, 1000);
-		});
-		description.animate({opacity: 0}, 500, function(){
-			description.html(descriptionTexts[x]);
-			description.animate({opacity: 1}, 1000);
-		});
+		startX = x;
 		if(change === undefined)change = 1;
 		type = type || "relative";
 		circles[x].attr("class", "slider-circle clickable");
@@ -79,16 +70,29 @@ function main(){
 		if(x >= children.length)x = 0;
 		circles[x].attr("class", "slider-circle selected");
 		slider.style.transform = "translateX(-"+x*100+"vw)";
+		if(startX !== x){
+			buttonText.animate({opacity: 0}, 500, function(){
+				button.css("width", "");
+				buttonText.html(buttonTexts[x]);
+				button.css("width", buttonText.css("width"));
+				buttonText.animate({opacity: 1}, 1000);
+			});
+			description.animate({opacity: 0}, 500, function(){
+				description.html(descriptionTexts[x]);
+				description.animate({opacity: 1}, 1000);
+			});
+		}
 		clearTimeout(timeout);
 		timeout = setTimeout(slide, delay);
 	}
 	timeout = setTimeout(slide, delay);
 
 	onresize = resize = function(){
-		cell.style.borderRight = "32px solid transparent";
 		image.style.width = 0;
 		image.style.width = getComputedStyle(intro).getPropertyValue("height");
 	}
+
+	cell.className += " with-javascript";
 
 	resize();
 }
