@@ -50,8 +50,9 @@ header, footer {
 header {
 	top: 0;
 	height: 64px;
-	background-color: rgba(0, 0, 0, 0.8);
+	background: rgba(0, 0, 0, 0.8);
 	border-bottom: 4px solid #bc0000;
+	transition: height 0.2s ease-in-out;
 }
 
 
@@ -63,6 +64,7 @@ header {
 	position: absolute;
 	top: 0;
 	z-index: 0;
+	transition: height 0.2s ease-in-out;
 }
 
 #logo {
@@ -221,6 +223,7 @@ h2 {
 	position: relative;
 	margin-top: 64px;
 	overflow: hidden;
+	transition: margin-top 0.2s ease-in-out;
 }
 
 #slider-overlay {
@@ -558,15 +561,33 @@ footer span {
 	h2 {
 		text-align: center;
 	}
+	header {
+		height: 128px;
+	}
+	#header-underlay {
+		height: 128px;
+	}
 	#branding {
 		left: 50%;
 		transform: translateX(-50%);
 	}
 	#main-nav {
-		display: none;
+		display: block;
+		width: 100vw;
+		position: absolute;
+		left: 0;
+		margin-top: 64px;
+	}
+	#main-nav ul li {
+		text-align: center;
+	}
+	#main-nav ul li a {
+		width: calc(100vw / 5);
+		padding: 0;
 	}
 	#slider {
 		height: 240px;
+		margin-top: 132px;
 	}
 	#slider-description-container {
 		top: 30%;
@@ -584,6 +605,21 @@ footer span {
 		width: calc(100vw - 112px);
 	}
 	#image {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	header {
+		height: 64px;
+	}
+	#header-underlay {
+		height: 64px;
+	}
+	#slider {
+		margin-top: 68px;
+	}
+	#main-nav {
 		display: none;
 	}
 }
