@@ -117,6 +117,7 @@ h2 {
 	font-size: 0;
 	height: 64px;
 	display: table;
+        left: 50px;
 }
 
 
@@ -124,7 +125,7 @@ h2 {
 #main-nav {
 	position: absolute;
 	top: 0;
-	left: 360px;
+	left: 150px;
 }
 
 #main-nav ul {
