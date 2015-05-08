@@ -540,6 +540,7 @@ h2 {
 	width: 300px;
 	position: relative;
 	display: inline-block;
+	-webkit-filter: drop-shadow(0 0 2px white);
 }
 
 .neosync:before, .neosync:after {
