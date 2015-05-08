@@ -2,7 +2,7 @@ var slide
 function main(){
 	var slider = document.getElementById("slider-list"),
 		children = slider.getElementsByTagName("li"),
-		image = document.getElementById("image"),
+		image = document.querySelector(".pr.image"),
 		intro = document.getElementById("intro"),
 		cell = document.getElementById("intro-table-image-cell"),
 		description = $("#slider-description"),
@@ -12,8 +12,8 @@ function main(){
 			description.html(),
 			"Powered Rails is constantly expanding. You can view the source and help out through GitHub!",
 			"PR also has a vibrant community of developers.",
+			"By the way, you can change the content of these slides in the JavaScript in lines 13-17.",
 			"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			"Filler text...",
 			"Final slide."
 		],
 		buttonTexts = [

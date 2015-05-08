@@ -2,7 +2,7 @@
   -- 1. IMPORTS --
 *******************************/
 
-@import url('http://fonts.googleapis.com/css?family=Raleway:100');
+@import url('http://fonts.googleapis.com/css?family=Raleway:300');
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:300');
 
 /*******************************
@@ -26,7 +26,7 @@ html, body {
 }
 
 h2 {
-	font-size: 2rem;
+	font: 2rem Raleway, Verdana, sans-serif;
 	white-space: normal;
 }
 
@@ -39,6 +39,19 @@ p {
 
 .clickable {
 	cursor: pointer;
+}
+
+.pr {
+	background-image: url(../images/logo.png);
+}
+
+.neosync {
+	background-image: url(../images/neosync.png);
+}
+
+.image {
+	background-size: cover;
+	background-position: center;
 }
 
 
@@ -304,6 +317,7 @@ h2 {
 	transform: translate(-50%, -50%);
 	line-height: 32px;
 	white-space: nowrap;
+	font-family: Raleway, Verdana, sans-serif;
 }
 
 /*** 4-A. SLIDING PART ********/
@@ -469,7 +483,6 @@ h2 {
 #content {
 	font-size: 0;
 	white-space: nowrap;
-	padding: 8px;
 }
 
 /* content:after for extra scroll room */
@@ -485,7 +498,8 @@ h2 {
 	overflow: auto;
 	position: relative;
 	padding: 32px;
-	margin: 16px;
+	margin: 32px;
+	margin-bottom: 0;
 	width: calc(50vw - 104px);
 	background-color: #181818;
 	color: #fff;
@@ -510,26 +524,49 @@ h2 {
 	width: calc(100vw - 112px);
 }
 
-#image {
-	position: relative;
-	display: inline-block;
-	height: 0;
-	padding-bottom: 100%;
-	background-image: url(../images/logo.png);
-	background-size: cover;
-	background-position: center;
-}
-
 #intro-table-image-cell {
 	vertical-align: middle;
 }
 
-#news, #sponsors {
+#intro-table-image-cell .pr {
+	position: relative;
+	display: inline-block;
+	height: 0;
+	padding-bottom: 100%;
+}
+
+.neosync {
+	margin: 16px 0 0 0;
+	width: 300px;
+	position: relative;
 	display: inline-block;
 }
 
-#content h2 {
-	font-family: Raleway, Verdana, sans-serif;
+.neosync:before, .neosync:after {
+	content: "";
+	display: block;
+}
+
+.neosync:before {
+	margin-top: 20%;
+}
+
+.neosync:after {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.content-box-table {
+	display: table;
+	border-spacing: 32px;
+}
+
+.content-box.cell {
+	display: table-cell;
+	vertical-align: top
 }
 
 
