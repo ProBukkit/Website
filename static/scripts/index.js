@@ -11,10 +11,10 @@ function main(){
 		descriptionTexts = [
 			description.html(),
 			"Powered Rails is constantly expanding. You can view the source and help out through GitHub!",
-			"PR also has a vibrant community of developers. Join us, noob.",
+			"PR also has a vibrant community of developers.",
 			"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-			"This is obviously filler text, I have no idea what to put here.",
-			"Try displaying this page without JavaScript!"
+			"Filler text...",
+			"Final slide."
 		],
 		buttonTexts = [
 			buttonText.html(),

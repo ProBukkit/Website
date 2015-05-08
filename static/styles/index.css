@@ -1,5 +1,12 @@
 /*******************************
-  -- 1. GENERAL DECLARATIONS --
+  -- 1. IMPORTS --
+*******************************/
+
+@import url('http://fonts.googleapis.com/css?family=Raleway:100');
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300');
+
+/*******************************
+  -- 2. GENERAL DECLARATIONS --
 *******************************/
 
 * {
@@ -37,10 +44,10 @@ p {
 
 
 /*******************************
-  -- 2. HEADER --
+  -- 3. HEADER --
 *******************************/
 
-/*** 2-A. POSITIONING *********/
+/*** 3-A. POSITIONING *********/
 header, footer {
 	width: 100vw;
 	position: fixed;
@@ -56,7 +63,7 @@ header {
 }
 
 
-/*** 2-B. LOGO+HEADING ********/
+/*** 3-B. LOGO+HEADING ********/
 #header-underlay {
 	width: 100%;
 	height: 64px;
@@ -121,7 +128,7 @@ h2 {
 }
 
 
-/*** 2-C. MAIN NAVIGATION *****/
+/*** 3-C. MAIN NAVIGATION *****/
 #main-nav {
 	position: absolute;
 	top: 0;
@@ -170,7 +177,7 @@ h2 {
 }
 
 
-/*** 2-D. NAV PILLS ***********/
+/*** 3-D. NAV PILLS ***********/
 #buttons {
 	width: 224px;
 	display: block;
@@ -215,7 +222,7 @@ h2 {
 
 
 /*******************************
-  -- 3. SLIDER --
+  -- 4. SLIDER --
 *******************************/
 
 #slider {
@@ -299,7 +306,7 @@ h2 {
 	white-space: nowrap;
 }
 
-/*** 3-A. SLIDING PART ********/
+/*** 4-A. SLIDING PART ********/
 #slider-list {
 	display: inline-block;
 	list-style: none;
@@ -316,7 +323,7 @@ h2 {
 }
 
 
-/*** 3-A. SLIDES **************/
+/*** 4-B. SLIDES **************/
 #slider-list li {
 	width: 100vw;
 	height: 100%;
@@ -352,7 +359,7 @@ h2 {
 }
 
 
-/*** 3-B. SLIDER CIRCLES ******/
+/*** 4-C. SLIDER CIRCLES ******/
 #slider-circles {
 	position: absolute;
 	z-index: 2;
@@ -384,7 +391,7 @@ h2 {
 }
 
 
-/*** 3-C. SLIDER ARROWS *******/
+/*** 4-D. SLIDER ARROWS *******/
 .slider-button {
 	position: absolute;
 	width: 135.75px;
@@ -456,7 +463,7 @@ h2 {
 
 
 /*******************************
-  -- 4. CONTENT --
+  -- 5. CONTENT --
 *******************************/
 
 #content {
@@ -521,10 +528,14 @@ h2 {
 	display: inline-block;
 }
 
+#content h2 {
+	font-family: Raleway, Verdana, sans-serif;
+}
+
 
 
 /*******************************
-  -- 5. FOOTER --
+  -- 6. FOOTER --
 *******************************/
 
 footer {
@@ -542,7 +553,7 @@ footer span {
 
 
 /*******************************
-  -- 6. MEDIA QUERIES --
+  -- 7. MEDIA QUERIES --
 *******************************/
 
 @media screen and (max-width: 1080px) {
