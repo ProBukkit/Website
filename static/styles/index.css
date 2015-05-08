@@ -521,7 +521,7 @@ h2 {
 
 #intro {
 	position: relative;
-	width: calc(100vw - 112px);
+	width: calc(100vw - 128px);
 }
 
 #intro-table-image-cell {
