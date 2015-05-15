@@ -1,4 +1,4 @@
-var slide
+var slide;
 function main(){
 	var slider = document.getElementById("slider-list"),
 		children = slider.getElementsByTagName("li"),
@@ -6,13 +6,25 @@ function main(){
 		intro = document.getElementById("intro"),
 		cell = document.getElementById("intro-table-image-cell"),
 		description = $("#slider-description"),
+		$loginButton = $("button.login"),
+		$signupButton = $("button.signup"),
+		$pill = $("#buttons button"),
+		$overlay = $(".overlay"),
 		button = $("#slider-description-button"),
 		buttonText = $("#slider-description-button-text"),
+		locations = [
+			"#",
+			"https://github.com/PoweredRails",
+			"#",
+			"#",
+			"#",
+			"#"
+		],
 		descriptionTexts = [
 			description.html(),
 			"Powered Rails is constantly expanding. You can view the source and help out through GitHub!",
 			"PR also has a vibrant community of developers.",
-			"By the way, you can change the content of these slides in the JavaScript in lines 13-17.",
+			"By the way, you can change the content of these slides in the JavaScript in lines 25-29.",
 			"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 			"Final slide."
 		],
@@ -59,6 +71,26 @@ function main(){
 	);
 	button.css("width", buttonText.css("width"));
 
+	$pill.click(function(){
+		var $box = $("."+$(this).attr("class")+".box");
+		$overlay
+			.show()
+		$box
+			.show()
+		setTimeout(function(){
+			$overlay.addClass("visible");
+			$box.addClass("visible");
+		}, 1);
+		$box.children(".x").on("click", function(){
+			$overlay.removeClass("visible");
+			$box.removeClass("visible");
+			setTimeout(function(){
+				$overlay.hide();
+				$box.hide();
+			}, 500);
+		});
+	});
+
 	slide = function(change, type){
 		startX = x;
 		if(change === undefined)change = 1;
@@ -72,10 +104,17 @@ function main(){
 		slider.style.transform = "translateX(-"+x*100+"vw)";
 		if(startX !== x){
 			buttonText.animate({opacity: 0}, 500, function(){
+				button.off("click");
 				button.css("width", "");
 				buttonText.html(buttonTexts[x]);
 				button.css("width", buttonText.css("width"));
-				buttonText.animate({opacity: 1}, 1000);
+				buttonText.animate({opacity: 1}, 1000, "swing", function(){
+					button.on("click", function(){
+						console.log(locations[x]);
+						if(locations[x] !== "#")
+							window.open(locations[x]);
+					});
+				});
 			});
 			description.animate({opacity: 0}, 500, function(){
 				description.html(descriptionTexts[x]);
