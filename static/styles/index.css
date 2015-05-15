@@ -2,15 +2,15 @@
   -- 1. IMPORTS --
 *******************************/
 
-@import url('http://fonts.googleapis.com/css?family=Raleway:300');
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:300');
+@import url('http://fonts.googleapis.com/css?family=Raleway');
+@import url('http://fonts.googleapis.com/css?family=Lato:300');
 
 /*******************************
   -- 2. GENERAL DECLARATIONS --
 *******************************/
 
 * {
-	font-family: 'Open Sans', sans-serif;
+	font-family: Lato, sans-serif;
 }
 
 html, body {
@@ -32,7 +32,7 @@ h2 {
 
 p {
 	margin-bottom: 0;
-	font-size: 1rem;
+	font-size: 1.1rem;
 	white-space: normal;
 	text-align: justify;
 }
@@ -42,7 +42,7 @@ p {
 }
 
 .pr {
-	background-image: url(../images/logo.png);
+	background-image: url(../images/logo.svg);
 }
 
 .neosync {
@@ -71,7 +71,7 @@ header {
 	top: 0;
 	height: 64px;
 	background: rgba(0, 0, 0, 0.8);
-	border-bottom: 4px solid #bc0000;
+	border-bottom: 4px solid #bc012a;
 	transition: height 0.2s ease-in-out;
 }
 
@@ -80,7 +80,7 @@ header {
 #header-underlay {
 	width: 100%;
 	height: 64px;
-	background-color: #000000;
+	background-color: #330000;
 	position: absolute;
 	top: 0;
 	z-index: 0;
@@ -88,14 +88,9 @@ header {
 }
 
 #logo {
-	display: table-cell;
 	width: 48px;
 	height: 48px;
-	background-image: url(../images/logo.png);
-	background-size: 52px;
-	background-position: center;
-	/*background-color: #bc0000;*/
-	margin: 8px;
+	margin: 8px 24px;
 	display: inline-block;
 	border-radius: 50%;
 }
@@ -125,7 +120,7 @@ h1 {
 	display: inline-block;
 	margin: 0;
 	color: #fff;
-	font: 2em Righteous, sans-serif;
+	font: 2rem Raleway, sans-serif;
 }
 
 h2 {
@@ -133,19 +128,15 @@ h2 {
 }
 
 #branding {
-	position: absolute;
 	font-size: 0;
 	height: 64px;
-	display: table;
-        left: 50px;
+	display: inline-block;
 }
-
 
 /*** 3-C. MAIN NAVIGATION *****/
 #main-nav {
-	position: absolute;
-	top: 0;
-	left: 150px;
+	display: inline-block;
+	vertical-align: top;
 }
 
 #main-nav ul {
@@ -154,6 +145,7 @@ h2 {
 	margin: 0;
 	padding: 0;
 	font-size: 0;
+	text-align: center;
 }
 
 #main-nav ul li {
@@ -163,7 +155,7 @@ h2 {
 
 #main-nav ul li a {
 	display: block;
-	font-size: 1rem;
+	font-size: 1.25rem;
 	text-decoration: none;
 	height: 64px;
 	line-height: 64px;
@@ -180,7 +172,7 @@ h2 {
 	bottom: 0;
 	width: 100%;
 	height: 0;
-	background: #bc0000;
+	background: #bc012a;
 	transition: height 0.2s ease-in-out;
 }
 
@@ -202,7 +194,7 @@ h2 {
 }
 
 #buttons button {
-	background-color: #c00;
+	background-color: #bc012a;
 	color: #fff;
 	font-weight: bold;
 	padding: 0 16px;
@@ -212,7 +204,7 @@ h2 {
 	line-height: 32px;
 	outline: 0;
 	border: 0;
-	box-shadow: 0 4px #800;
+	box-shadow: 0 4px #890007;
 	border-radius: 4px;
 	bottom: 0;
 	cursor: pointer;
@@ -394,13 +386,17 @@ h2 {
 	display: inline-block;
 	border-radius: 50%;
 	margin: 4px;
-	-webkit-transition: background 0.2s ease-in-out;
-	-moz-transition: background 0.2s ease-in-out;
-	-o-transition: background 0.2s ease-in-out;
-	transition: background 0.2s ease-in-out;
+	-webkit-transition: .2s ease-in-out;
+	-moz-transition: .2s ease-in-out;
+	-o-transition: .2s ease-in-out;
+	transition: .2s ease-in-out;
 }
 
-.selected {
+.slider-circle:hover {
+	background: rgba(255, 255, 255, 0.7);
+}
+
+.slider-circle.selected {
 	background: rgba(255, 255, 255, 0.9);
 }
 
@@ -494,7 +490,7 @@ h2 {
 }
 
 .content-box {
-	border-top: 4px solid #bc0000;
+	border-top: 4px solid #bc012a;
 	overflow: auto;
 	position: relative;
 	padding: 32px;
@@ -503,7 +499,6 @@ h2 {
 	width: calc(50vw - 104px);
 	background-color: #181818;
 	color: #fff;
-	box-shadow: inset 0 0 64px rgba(0, 0, 0, 1);
 }
 
 .content-table {
@@ -594,33 +589,39 @@ footer span {
 *******************************/
 
 @media screen and (max-width: 1080px) {
+	h2 {
+		text-align: center;
+	}
 	#buttons {
 		display: none;
 	}
-	#main-nav {
+/*	#main-nav {
 		left: auto;
 		right: 24px;
-	}
+	}*/
 	#slider-description-container {
 		top: 40%;
+	}
+	#intro-table-image-cell .pr {
+		display: none;
+	}
+	.content-table-cell.with-javascript {
+		border-right: 0;
 	}
 }
 
 @media screen and (max-width: 840px) {
-	h2 {
-		text-align: center;
-	}
-	header {
+/*	header {
 		height: 128px;
 	}
 	#header-underlay {
 		height: 128px;
-	}
-	#branding {
+	}*/
+/*	#branding {
 		left: 50%;
 		transform: translateX(-50%);
-	}
-	#main-nav {
+	}*/
+/*	#main-nav {
 		display: block;
 		width: 100vw;
 		position: absolute;
@@ -633,10 +634,10 @@ footer span {
 	#main-nav ul li a {
 		width: calc(100vw / 5);
 		padding: 0;
-	}
+	}*/
 	#slider {
 		height: 240px;
-		margin-top: 132px;
+		/*margin-top: 132px;*/
 	}
 	#slider-description-container {
 		top: 30%;
@@ -653,9 +654,6 @@ footer span {
 	.content-box {
 		width: calc(100vw - 112px);
 	}
-	#image {
-		display: none;
-	}
 }
 
 @media screen and (max-width: 480px) {
@@ -668,7 +666,10 @@ footer span {
 	#slider {
 		margin-top: 68px;
 	}
-	#main-nav {
-		display: none;
+	p {
+		font-size: .8rem;
 	}
+/*	#main-nav {
+		display: none;
+	}*/
 }

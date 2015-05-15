@@ -2,7 +2,7 @@ var slide
 function main(){
 	var slider = document.getElementById("slider-list"),
 		children = slider.getElementsByTagName("li"),
-		image = document.querySelector(".pr.image"),
+		image = document.querySelector(".pr.content.image"),
 		intro = document.getElementById("intro"),
 		cell = document.getElementById("intro-table-image-cell"),
 		description = $("#slider-description"),
