@@ -237,6 +237,7 @@ h2 {
 	margin-top: 64px;
 	overflow: hidden;
 	transition: margin-top 0.2s ease-in-out;
+	background: #100;
 }
 
 #slider-overlay {
