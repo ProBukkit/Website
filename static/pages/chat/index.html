@@ -13,11 +13,11 @@ function addHTML(target,html) {
 </script>
 </head>
 <body>
-<a href="#" onMouseDown="javascript:addHTML('myContainer','<em>Hello World!</em>');" onClick="return false">
+<a href="#" onMouseDown="document.getElementById('myContainer').innerHTML += '<li>Example...</li>'" onClick="return false">
 Click here to say hello
 </a>
  &nbsp; 
-<a href="#" onMouseDown="document.getElementById('myContainer').innerText = 'Some Text';" onClick="return false">
+<a href="#" onMouseDown="element.innerHTML += '<li>u wot</li>'" onClick="return false">
 Click here to say goodbye
 </a>
 <br /><br />
