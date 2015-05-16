@@ -1,0 +1,26 @@
+<html>
+<head>
+<script type="text/javascript" language="javascript"> 
+<!--
+// By Adam Khoury @ www.developphp.com
+function addHTML(target,html) {
+
+  var myTarget = document.getElementById(target);
+    myTarget.innerHTML = html;
+	
+} 
+//-->
+</script>
+</head>
+<body>
+<a href="#" onMouseDown="javascript:addHTML('myContainer','<em>Hello World!</em>');" onClick="return false">
+Click here to say hello
+</a>
+ &nbsp; 
+<a href="#" onMouseDown="javascript:addHTML('myContainer','<em>Goodbye World!</em>');" onClick="return false">
+Click here to say goodbye
+</a>
+<br /><br />
+<div id="myContainer" style="background-color: #EBE1C5; width:200px;">&nbsp;</div>
+</body>
+</html>
