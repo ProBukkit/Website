@@ -61,7 +61,7 @@ p {
 *******************************/
 
 /*** 3-A. POSITIONING *********/
-header, footer {
+header {
 	width: 100vw;
 	position: fixed;
 	z-index: 3;
